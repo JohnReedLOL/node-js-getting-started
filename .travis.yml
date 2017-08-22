@@ -1,0 +1,15 @@
+language: node_js
+sudo: false
+dist: trusty
+node_js:
+  - "6"
+  - "7"
+env:
+  - MY_VAR=EverythignIsAwesome
+before_install:
+  - "echo 'Preinstall running!'"
+install:
+  - npm install
+cache:
+  directories:
+    - "node_modules"
