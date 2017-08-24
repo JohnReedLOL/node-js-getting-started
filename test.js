@@ -8,7 +8,7 @@ const child = spawn('node', ['index.js'], {env});
 
 test('responds to requests', (t) => {
   t.plan(4);
-
+  console.log("Running test 'responds to requests'!");
   // Wait until the server is ready
   child.stdout.on('data', _ => {
     // Make a request to our app

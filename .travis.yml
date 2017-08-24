@@ -2,14 +2,26 @@ language: node_js
 sudo: false
 dist: trusty
 node_js:
+  - "5"
   - "6"
   - "7"
+# configure which branches to run
+branches:
+  # whitelist
+  only:
+    - master
 env:
   - TIMES=2
 before_install:
-  - "echo 'Preinstall running!'"
+  - echo 'Preinstall running!'
 install:
   - npm install
+before_script:
+  - echo 'Pre-test running!'
+script:
+  - npm test
+before_deploy:
+  - echo 'About to deploy!'
 cache:
   directories:
     - "node_modules"
