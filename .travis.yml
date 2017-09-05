@@ -8,7 +8,7 @@ notifications:
     on_failure: always
 # specify language
 language: node_js
-sudo: false
+sudo: true
 dist: trusty
 node_js:
   - "6"
@@ -25,9 +25,9 @@ before_install:
 install:
   - npm install
 before_script:
-  - echo 'Pre-test running!'
+  - cat ./package.json; echo 'Pre-test running!'
 script:
-  - npm test
+  - sudo npm install --save @google-cloud/vision; cat ./package.json; cat ~/package.json; npm test
 before_deploy:
   - echo 'About to deploy!'
 cache:
