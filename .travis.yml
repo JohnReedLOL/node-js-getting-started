@@ -27,7 +27,7 @@ install:
 before_script:
   - cat ./package.json; echo 'Pre-test running!'
 script:
-  - sudo npm install --save @google-cloud/vision; cat ./package.json; cat ~/package.json; npm test
+  - npm install --save @google-cloud/vision; cat ./package.json; npm test
 before_deploy:
   - echo 'About to deploy!'
 cache:
